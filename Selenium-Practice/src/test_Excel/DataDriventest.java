@@ -1,4 +1,4 @@
-package test;
+package test_Excel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -63,6 +63,7 @@ public class DataDriventest {
 		driver.findElement(By.xpath("//*[@id='email']")).sendKeys(username);
 		driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input")).sendKeys(password);
 		driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input")).sendKeys(password);
+		driver.close();
 	}
 
 }

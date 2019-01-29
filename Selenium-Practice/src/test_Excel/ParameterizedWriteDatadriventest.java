@@ -1,4 +1,4 @@
-package test;
+package test_Excel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import utility.Xls_Reader;
 
-public class ParameterizedDatadriventest {
+public class ParameterizedWriteDatadriventest {
 
 	public static void main(String[] args) {
 		
@@ -14,7 +14,6 @@ public class ParameterizedDatadriventest {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/A622893/git/Selenium-Practice/Selenium-Practice/chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
-		//driver.get("https://reg.ebay.com/reg/PartialReg?ru=https%3A%2F%2Fwww.ebay.com%2F");
 		driver.get("http://newtours.demoaut.com/mercuryregister.php");
 		
 		//get data from excel sheet
@@ -22,6 +21,9 @@ public class ParameterizedDatadriventest {
 		Xls_Reader reader= new Xls_Reader("/Users/A622893/git/Selenium-Practice/Selenium-Practice/testData/Datadriventestdata.xlsx");
 		int rowCount = reader.getRowCount("RegTestData");
 		System.out.println("RowCount : "+ rowCount);
+		
+		//Add column
+		reader.addColumn("RegTestData", "status");
 		
 		for(int rowNum=2; rowNum<=rowCount; rowNum++){
 			String firstname=reader.getCellData("RegTestData", "firstname", rowNum);
@@ -95,8 +97,9 @@ public class ParameterizedDatadriventest {
 			driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input")).clear();
 			driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input")).sendKeys(password);
 			
+			// write the cell data into the newly added value
+			reader.setCellData("RegTestData", "status", rowNum, "Pass");
 			}
 		driver.close();
-		
 	}
 }

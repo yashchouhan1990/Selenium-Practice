@@ -37,7 +37,7 @@ public class Read_PropertyFile {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-	//	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("url"));
 		driver.findElement(By.xpath(prop.getProperty("username_name"))).clear();
