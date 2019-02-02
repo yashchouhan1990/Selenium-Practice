@@ -20,9 +20,12 @@ import org.apache.poi.xssf.usermodel.XSSFHyperlink;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.SkipException;
 
 public class Xls_Reader {
 
+	public static Xls_Reader excel = new Xls_Reader("/Users/A622893/git/Selenium-Practice/Selenium-Practice/testData/Suite.xlsx");
+	
 	public String path;
 	public FileInputStream fis = null;
 	public FileOutputStream fileOut = null;
@@ -469,5 +472,54 @@ public class Xls_Reader {
 		return -1;
 
 	}
+	
+// Other methods added	
+	
+	public static boolean isExecutable(String tcid) {
+		//System.out.println("*************PATH************" + path);
+		//System.out.println("*************In TestExecutable Actual Method Util Class************* :" + tcid);
+	//try{	
+		for( int rowNum=2; rowNum<=excel.getRowCount("Suite"); rowNum++){
+			//System.out.println("*************In  For Loop***********");
+			//System.out.println("***Current Value in IF TCID:- " + excel.getCellData("CF_TestCase_Selection", "TCID", rowNum));
+			if(excel.getCellData("Suite", "TCID", rowNum).equals(tcid)){
+				//System.out.println("***Inside Big IF*******");
+				if(excel.getCellData("Suite", "RunMode", rowNum).equalsIgnoreCase("Y")){
+					//System.out.println("***Current Value:- " + excel.getCellData("CF_TestCase_Selection", "RunMode", rowNum));
+					return true;		
+				}
+				else {	
+					return false;
+				}
+			}		
+		}
+	//}
+	/*catch(Exception e)
+	{
+	      System.out.println("Exception " + e);
+	}*/
+		return false;
+	}
 
+	public static boolean isSuiteExecutable(String suiteName)
+	{
+		System.out.println ("In isSuiteExecutable");
+		boolean suiteResult=false;
+		for(int rowNum=2; rowNum<=excel.getRowCount("Suite"); rowNum++)
+		{
+			if(excel.getCellData("Suite", "TSID", rowNum).equals(suiteName))
+			{
+				if(excel.getCellData("Suite", "RunMode", rowNum).equalsIgnoreCase("Y"))
+				{
+					suiteResult =  true;
+				}
+				else
+				{
+					suiteResult =  false;
+				}
+			}
+			System.out.println("*********SUIT TO RUN**********" + suiteResult);
+		}
+		return suiteResult;
+	}
 }

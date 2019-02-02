@@ -30,7 +30,7 @@ public class DataProviderDatadrivenTest {
 	driver.get("http://newtours.demoaut.com/mercuryregister.php");
 	}
 
-	@DataProvider
+	@DataProvider(name="testcase")
 	public Iterator<Object[]> getTestdata(){
 		ArrayList<Object[]> testdata = DataProviderUtility.getDataFromExcel();
 		return  testdata.iterator();
