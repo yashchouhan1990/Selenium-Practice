@@ -3,14 +3,17 @@ package test_TestNGConcepts;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestNG_groups_priority_dependOn {
-	WebDriver driver;
+public class ScreenShotTest {
+WebDriver driver;
 	
 	@BeforeMethod  
 	public void setUp(){
@@ -23,60 +26,37 @@ public class TestNG_groups_priority_dependOn {
 		driver.get("https://www.google.com");
 	}
 	
-	@Test(priority=1, groups="Login-test")
+	public void failed(){
+		File scrfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.c
+	}
+	@Test
 	public void googleTitleTest(){
 		String title= driver.getTitle();
 		System.out.println("page Title : "+title);
 	}
 	
-	@Test (priority=3, groups="Mail-test")
+	@Test
 	public void maillinkTest(){
 		boolean b= driver.findElement(By.xpath("//*[@id='gbw']/div/div/div[1]/div[1]/a")).isDisplayed();
 		System.out.println("Mail Link Status : "+b);
 	}
 	
-	@Test (priority=2, groups="Google-test")
+	@Test
 	public void googleLogoTest(){
 		boolean bol = driver.findElement(By.xpath("//*[@id='hplogo']")).isDisplayed();
 		System.out.println("Logo test : "+bol);
 	}
 	
-	@Test (priority=4, groups="Google-test")   
-	public void Test4(){
-		System.out.println("Test4 : ");
+	@Test
+	public void takeScreenshotTest(){
+		Assert.assertEquals(false, true);
 	}
 	
-	@Test (priority=5, groups="Google-test")
-	public void Test5(){
-		System.out.println("Test5 : ");
-	}
-	
-	@Test ( dependsOnMethods="googleTitleTest")   
-	public void Test6(){
-		System.out.println("Test6 : ");
-	}
-	
-	@Test ( dependsOnMethods="googleTitleTest")
-	public void Test7(){
-		System.out.println("Test7 : ");
-	}
-	
-	@Test (priority=6, enabled=false)      // test case is skipped as enabled is false
-	public void Test8(){
-		System.out.println("Test8 : ");
-	}
-
-	@Test (priority=7, enabled=true)
-	public void Test9(){
-		System.out.println("Test : ");
-	}
-
 	@AfterMethod
 	public void tearDown(){
 		driver.quit();
 	}
+
+
 }
-/*
-Check Index html report on the following path-
-file:///C:/Users/A622893/OneDrive%20-%20Atos/git-personal/Selenium-Practice/Selenium-Practice/test-output/index.html#
-*/
