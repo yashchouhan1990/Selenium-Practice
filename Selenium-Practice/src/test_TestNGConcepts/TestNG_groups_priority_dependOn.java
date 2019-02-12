@@ -1,15 +1,15 @@
 package test_TestNGConcepts;
 
-import java.sql.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-
-public class GoogleTest {
+public class TestNG_groups_priority_dependOn {
 	WebDriver driver;
 	
 	@BeforeMethod  
@@ -23,29 +23,50 @@ public class GoogleTest {
 		driver.get("https://www.google.com");
 	}
 	
-	@Test
+	@Test(priority=1, groups="Login-test")
 	public void googleTitleTest(){
 		String title= driver.getTitle();
 		System.out.println("page Title : "+title);
 	}
 	
-	@Test
+	@Test (priority=3, groups="Mail-test")
 	public void maillinkTest(){
 		boolean b= driver.findElement(By.xpath("//*[@id='gbw']/div/div/div[1]/div[1]/a")).isDisplayed();
 		System.out.println("Mail Link Status : "+b);
 	}
 	
-	@Test
+	@Test (priority=2, groups="Google-test")
 	public void googleLogoTest(){
 		boolean bol = driver.findElement(By.xpath("//*[@id='hplogo']")).isDisplayed();
 		System.out.println("Logo test : "+bol);
 	}
 	
+	@Test (priority=4, groups="Google-test")   
+	public void Test4(){
+		System.out.println("Test4 : ");
+	}
 	
+	@Test (priority=5, groups="Google-test")
+	public void Test5(){
+		System.out.println("Test5 : ");
+	}
+	
+	@Test ( dependsOnMethods="googleTitleTest")   
+	public void Test6(){
+		System.out.println("Test6 : ");
+	}
+	
+	@Test ( dependsOnMethods="googleTitleTest")
+	public void Test7(){
+		System.out.println("Test7 : ");
+	}
 	
 	@AfterMethod
 	public void tearDown(){
 		driver.quit();
 	}
-
 }
+/*
+Check Index html report on the following path-
+file:///C:/Users/A622893/OneDrive%20-%20Atos/git-personal/Selenium-Practice/Selenium-Practice/test-output/index.html#
+*/

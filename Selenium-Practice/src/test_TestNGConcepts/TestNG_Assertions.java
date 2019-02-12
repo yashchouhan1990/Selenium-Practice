@@ -1,15 +1,17 @@
 package test_TestNGConcepts;
 
-import java.sql.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-
-public class GoogleTest {
+public class TestNG_Assertions {
+	
 	WebDriver driver;
 	
 	@BeforeMethod  
@@ -27,25 +29,30 @@ public class GoogleTest {
 	public void googleTitleTest(){
 		String title= driver.getTitle();
 		System.out.println("page Title : "+title);
+		Assert.assertEquals(title, "Google");
 	}
 	
 	@Test
-	public void maillinkTest(){
-		boolean b= driver.findElement(By.xpath("//*[@id='gbw']/div/div/div[1]/div[1]/a")).isDisplayed();
-		System.out.println("Mail Link Status : "+b);
+	public void googleTitleTest1(){
+		String title= driver.getTitle();
+		System.out.println("page Title : "+title);
+		Assert.assertEquals(title, "google", "Title is not matched");
 	}
 	
 	@Test
 	public void googleLogoTest(){
 		boolean bol = driver.findElement(By.xpath("//*[@id='hplogo']")).isDisplayed();
 		System.out.println("Logo test : "+bol);
+		Assert.assertTrue(bol);
+		//or
+		Assert.assertEquals(bol, true);
 	}
 	
-	
-	
+
 	@AfterMethod
 	public void tearDown(){
 		driver.quit();
 	}
+
 
 }
