@@ -34,5 +34,6 @@
 	<classpathentry kind="lib" path="C:/Users/A622893/OneDrive - Atos/Automation/selenium-jars/complete jars/poi-ooxml-schemas-4.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/A622893/OneDrive - Atos/Automation/selenium-jars/complete jars/poi-scratchpad-4.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/A622893/OneDrive - Atos/Automation/selenium-jars/complete jars/xmlbeans-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/A622893/OneDrive - Atos/Automation/selenium-jars/complete jars/org.apache.commons.io.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
