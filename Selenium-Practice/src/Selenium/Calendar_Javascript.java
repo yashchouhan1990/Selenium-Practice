@@ -35,7 +35,7 @@ public class Calendar_Javascript {
 	System.out.println("Title of the Page :"+title);
 	
 	driver.findElement(By.xpath("//input[@id='hotel-checkin-hp-hotel']")).click();
-	WebElement date= driver.findElement(By.id("//input[@id='hotel-checkin-hp-hotel']"));
+	WebElement date= driver.findElement(By.xpath("//input[@id='hotel-checkin-hp-hotel']"));
 	String dateVal= "30/12/2019";
 	
 	selectDateByJS(driver, date, dateVal);
