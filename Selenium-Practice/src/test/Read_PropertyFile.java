@@ -39,7 +39,7 @@ public class Read_PropertyFile {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("url"));
+		driver.get(prop.getProperty("url"));   // Freecrm new url-https://ui.cogmento.com/
 		driver.findElement(By.xpath(prop.getProperty("username_name"))).clear();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(prop.getProperty("username_name"))).sendKeys("YashChouhan");
