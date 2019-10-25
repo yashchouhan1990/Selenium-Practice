@@ -11,10 +11,11 @@ import org.testng.annotations.Test;
 public class Makemytrip_test {
 	WebDriver driver;
 	String URL= "https://www.makemytrip.com";
+	
 	@BeforeMethod
 	public void setup() {
 		
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\xooa\\git\\Selenium-Practice\\Selenium-Practice\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "/Users/yashchouhan/git/Selenium-Practice/Selenium-Practice/chromedriver");
 	driver= new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();

@@ -6,8 +6,11 @@ import org.testng.asserts.SoftAssert;
 
 public class TestNG_AssertionTypes {
 	
-// Hard Assertion: hard validation: If a hard assertion is getting failed --> immediately test case will be marked as failed and test case will be terminate	
-//	Soft assertion: soft validation: if a soft assertion is getting failed --> test case will not be marked as failed as well as next lines will be executed
+// Hard Assertion: hard validation: If a hard assertion is getting failed --> immediately test case will be marked as failed 
+//	and test case will be terminate	
+
+	//	Soft assertion: soft validation: if a soft assertion is getting failed --> test case will not be marked as
+	//failed as well as next lines will be executed
 	//assertAll() : to mark a test case as failed, if any soft assertion is getting failed
 	
 	SoftAssert sorftAssert= new SoftAssert();

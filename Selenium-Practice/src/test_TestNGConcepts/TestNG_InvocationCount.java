@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TestNG_InvocationCount {
 	
 	
-	@Test (invocationCount=10)
+	@Test (invocationCount=10)		//invocationCount- This is testcase is executed 10 times
 	public void Test1(){
 		int a=10;
 		int b= 20;

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RetryfailedtestSuite">
- 
- <listeners>
- 	<listener class-name="base_TestNG.TestNG_Transform"/>
- </listeners>
- 
-  <test name="RetryfailedtestSuite">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
     <classes>
-      <class name="test_TestNGConcepts.TestNG_RetryLogic"/>
+      <class name="test_TestNGConcepts.GoogleTest"/>
     </classes>
   </test> <!-- Test -->
-</suite> <!-- RetryfailedtestSuite -->
+</suite> <!-- Suite -->
