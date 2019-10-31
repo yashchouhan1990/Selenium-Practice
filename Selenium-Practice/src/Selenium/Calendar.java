@@ -15,7 +15,7 @@ public class Calendar {
 	public static void main(String[] args) throws InterruptedException, IOException {
 	WebDriver driver;
 	Properties prop = new Properties();
-	FileInputStream fis= new FileInputStream("C:/Users/xooa/git/new/Selenium-Practice/Selenium-Practice/src/configuration/config.properties");
+	FileInputStream fis= new FileInputStream("/Users/yashchouhan/git/Selenium-Practice/Selenium-Practice/src/configuration/config.properties");
 	prop.load(fis);
 
 	
