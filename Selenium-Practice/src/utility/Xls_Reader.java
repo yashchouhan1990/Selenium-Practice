@@ -24,7 +24,7 @@ import org.testng.SkipException;
 
 public class Xls_Reader {
 
-	public static Xls_Reader excel = new Xls_Reader("/Users/A622893/git/Selenium-Practice/Selenium-Practice/testData/Suite.xlsx");
+	public static Xls_Reader excel = new Xls_Reader("/Users/yashchouhan/git/Selenium-Practice/Selenium-Practice/testData/Suite.xlsx");
 	
 	public String path;
 	public FileInputStream fis = null;

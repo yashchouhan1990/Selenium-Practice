@@ -9,7 +9,7 @@ import utility.Xls_Reader;
 public class DataDriventest {
 
 	public static void main(String[] args) {
-		Xls_Reader reader= new Xls_Reader("/Users/A622893/git/Selenium-Practice/Selenium-Practice/testData/Datadriventestdata.xlsx");
+		Xls_Reader reader= new Xls_Reader("/Users/yashchouhan/git/Selenium-Practice/Selenium-Practice/testData/testData/Datadriventestdata.xlsx");
 		String firstname=reader.getCellData("RegTestData", "firstname", 2);
 		System.out.println(firstname);
 		
@@ -45,7 +45,7 @@ public class DataDriventest {
 		
 
 		
-		System.setProperty("webdriver.chrome.driver", "C:/Users/A622893/git/Selenium-Practice/Selenium-Practice/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:/Users/A622893/git/Selenium-Practice/Selenium-Practice/chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		//driver.get("https://reg.ebay.com/reg/PartialReg?ru=https%3A%2F%2Fwww.ebay.com%2F");

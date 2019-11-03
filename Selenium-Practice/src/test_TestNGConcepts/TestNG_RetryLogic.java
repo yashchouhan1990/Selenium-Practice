@@ -18,13 +18,13 @@ public class TestNG_RetryLogic {
 		Assert.assertEquals(true, false);
 	}
 
-/*
+
 	@Test (retryAnalyzer= base_TestNG.TestNG_RetryAnalyzer.class)
 	public void Test3(){
 		System.out.println("Test 3: ");
 		Assert.assertEquals(true, false);
 	}
-*/	
+	
 }
 
 /*

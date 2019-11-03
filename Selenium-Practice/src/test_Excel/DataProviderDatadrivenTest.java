@@ -21,7 +21,7 @@ public class DataProviderDatadrivenTest {
 	
 	@BeforeMethod
 	public void setUp(){
-	System.setProperty("webdriver.chrome.driver", "C:/Users/A622893/git/Selenium-Practice/Selenium-Practice/chromedriver.exe");
+	//System.setProperty("webdriver.chrome.driver", "C:/Users/A622893/git/Selenium-Practice/Selenium-Practice/chromedriver.exe");
 	driver= new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
