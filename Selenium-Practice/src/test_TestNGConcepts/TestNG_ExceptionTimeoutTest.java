@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class TestNG_ExceptionTimeoutTest {
 	// If a testcase stuck at some point then we can use this concept to terminate the condition 
 	
-/*	@Test(timeOut=3000)
+	@Test(timeOut=3000)
 	public void infinteLoop(){
 		int i=1;
 		while(i==1){
@@ -20,7 +20,7 @@ public class TestNG_ExceptionTimeoutTest {
 			System.out.println("value of j :"+j );
 		}
 	}
-*/	
+	
 	@Test(expectedExceptions=NumberFormatException.class)
 	public void test3(){
 		String x= "100A";

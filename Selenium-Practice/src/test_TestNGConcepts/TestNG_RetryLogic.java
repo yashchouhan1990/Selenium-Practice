@@ -19,7 +19,8 @@ public class TestNG_RetryLogic {
 	}
 
 
-	@Test (retryAnalyzer= base_TestNG.TestNG_RetryAnalyzer.class)
+	//@Test (retryAnalyzer= base_TestNG.TestNG_RetryAnalyzer.class)		---> once we mention in testng.xml file then no need to mention here expicitly
+	@Test
 	public void Test3(){
 		System.out.println("Test 3: ");
 		Assert.assertEquals(true, false);

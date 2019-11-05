@@ -35,16 +35,16 @@ public class Calendar_Javascript {
 	System.out.println("Title of the Page :"+title);
 	
 	driver.findElement(By.xpath("//input[@id='hotel-checkin-hp-hotel']")).click();
-	WebElement date= driver.findElement(By.xpath("//input[@id='hotel-checkin-hp-hotel']"));
+	WebElement dateXpath= driver.findElement(By.xpath("//input[@id='hotel-checkin-hp-hotel']"));
 	String dateVal= "30/12/2019";
 	
-	selectDateByJS(driver, date, dateVal);
+	selectDateByJS(driver, dateXpath, dateVal);
 }
 
-	public static void selectDateByJS(WebDriver driver, WebElement element, String dateVal) {
+	public static void selectDateByJS(WebDriver driver, WebElement dateXpath, String dateVal) {
 	
 		JavascriptExecutor js= ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].setAttribute('value','"+dateVal+"');", element);
+		js.executeScript("arguments[0].setAttribute('value','"+dateVal+"');", dateXpath);
 	}
 
 

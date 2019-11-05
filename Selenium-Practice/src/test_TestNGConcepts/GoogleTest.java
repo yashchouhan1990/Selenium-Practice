@@ -1,6 +1,6 @@
 package test_TestNGConcepts;
 
-import java.sql.DriverManager;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;

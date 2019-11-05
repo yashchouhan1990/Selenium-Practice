@@ -30,7 +30,7 @@ public class TestNG_Screenshotbase  {
 	public void failed(String testMethodName){
 		try{
 		File scrfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrfile, new File("C:/Users/A622893/OneDrive - Atos/git-personal/Selenium-Practice/Selenium-Practice/Screenshots/Fail/"+testMethodName+"_"+".jpg"));
+			FileUtils.copyFile(scrfile, new File("/Users/yashchouhan/git/Selenium-Practice/Selenium-Practice/Screenshots/Fail/"+testMethodName+"_"+".jpg"));
 		}
 		catch(IOException e){
 			e.printStackTrace();

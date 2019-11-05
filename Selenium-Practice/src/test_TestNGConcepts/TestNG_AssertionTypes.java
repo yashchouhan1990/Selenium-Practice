@@ -13,7 +13,7 @@ public class TestNG_AssertionTypes {
 	//failed as well as next lines will be executed
 	//assertAll() : to mark a test case as failed, if any soft assertion is getting failed
 	
-	SoftAssert sorftAssert= new SoftAssert();
+//	SoftAssert sorftAssert= new SoftAssert();
 	
 	@Test
 	public void test1(){
