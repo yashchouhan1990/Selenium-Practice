@@ -42,17 +42,39 @@ public class TestNG_AssertionTypes {
 	public void test2(){
 		SoftAssert sa2 = new SoftAssert();
 		
-		System.out.println("logout");
+		System.out.println("test2");
 		sa2.assertEquals(true, false);
+		System.out.println("test2 --logout");
 	}
 
 	@Test
 	public void test3(){
 		SoftAssert sa3 = new SoftAssert();
-		
-		System.out.println("logout");
+		System.out.println("test3");
 		sa3.assertEquals(true, false);
 		sa3.assertAll();
+		System.out.println("test3 --logout");		// this line will not get executed
 	}
 
 }
+
+/*
+ 
+Output-
+ 
+Open Browser
+Enter Username
+Enter Password
+Click on sign in Button
+validate Home Page
+Go to deals page
+create a deal
+test2
+test2 --logout
+PASSED: test2
+FAILED: test1
+java.lang.AssertionError: The following asserts failed:
+ * 
+ * 
+ * 
+ */

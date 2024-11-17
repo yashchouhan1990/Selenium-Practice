@@ -79,4 +79,17 @@ public class TestNG_groups_priority_dependOn {
 /*
 Check Index html report on the following path-
 file:///C:/Users/A622893/OneDrive%20-%20Atos/git-personal/Selenium-Practice/Selenium-Practice/test-output/index.html#
+
+Output-
+
+PASSED: googleTitleTest
+PASSED: Test6
+PASSED: Test7
+PASSED: googleLogoTest
+PASSED: maillinkTest
+PASSED: Test4
+PASSED: Test5
+PASSED: Test9
+
 */
+

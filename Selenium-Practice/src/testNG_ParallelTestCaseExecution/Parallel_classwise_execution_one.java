@@ -7,7 +7,7 @@ public class Parallel_classwise_execution_one {
 	@Test
     public void testMethodsOne() {
         long id = Thread.currentThread().getId();
-        System.out.println(" im in first test case from ClassOne Class | Simple test-method One. Thread id is: " + id);
+        System.out.println("im in first test case from ClassOne Class | Simple test-method One. Thread id is: " + id);
     }
  
     @Test
@@ -29,3 +29,22 @@ public class Parallel_classwise_execution_one {
 
     }
 }
+
+/*
+ * 
+ * OutPut-
+ * 
+im in fourth test case from ClassOne Class | Simple test-method Four. Thread id is: 1
+im in first test case from ClassOne Class | Simple test-method One. Thread id is: 1
+im in third test case from ClassOne Class | Simple test-method Three. Thread id is: 1
+im in second test case from ClassOne Class | Simple test-method Two. Thread id is: 1
+PASSED: testMethodsFour
+PASSED: testMethodsOne
+PASSED: testMethodsThree
+PASSED: testMethodsTwo
+
+ * 
+ * 
+ */
+
+
